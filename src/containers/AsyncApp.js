@@ -5,7 +5,7 @@ import {
   selectSubreddit,
   fetchPostsIfNeeded,
   invalidateSubreddit
-} from '../actions'
+} from '../redux/actions'
 import Picker from '../components/Picker'
 import Posts from '../components/Posts'
 
