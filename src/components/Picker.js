@@ -1,21 +1,21 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import './picker.css';
 
 export default class Picker extends Component {
   render() {
-    const { value, onChange, options } = this.props
+    const { value, onChange } = this.props
 
     return (
-      <span>
-        <h1>{value}</h1>
-        <select onChange={e => onChange(e.target.value)} value={value}>
-          {options.map(option => (
-            <option value={option} key={option}>
-              {option}
-            </option>
-          ))}
-        </select>
-      </span>
+      <div>
+          <h1>Reddit</h1>
+          <div className="input-group mb-2">
+            <input type="text" className="form-control" onChange={onChange} value={value} name="search" placeholder="Search"/>
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+            </div>
+          </div>
+      </div>
     )
   }
 }

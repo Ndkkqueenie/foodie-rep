@@ -48,11 +48,11 @@ class AsyncApp extends Component {
         <Picker
           value={selectedSubreddit}
           onChange={this.handleChange}
-          options={['reactjs', 'frontend']}
+          options={posts.subreddit}
         />
         <p>
           {lastUpdated && (
-            <span>
+            <span style={{color: 'white'}}>
               Last updated at {new Date(lastUpdated).toLocaleTimeString()}.{' '}
             </span>
           )}
@@ -60,8 +60,8 @@ class AsyncApp extends Component {
             <button onClick={this.handleRefreshClick}>Refresh</button>
           )}
         </p>
-        {isFetching && posts.length === 0 && <h2>Loading...</h2>}
-        {!isFetching && posts.length === 0 && <h2>Empty.</h2>}
+        {isFetching && posts.length === 0 && <h2 style={{color: 'white'}}>Loading...</h2>}
+        {!isFetching && posts.length === 0 && <h2 style={{color: 'white'}}>Empty.</h2>}
         {posts.length > 0 && (
           <div style={{ opacity: isFetching ? 0.5 : 1 }}>
             <Posts posts={posts} />
